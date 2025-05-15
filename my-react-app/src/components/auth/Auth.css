@@ -1,0 +1,277 @@
+/* Auth.css - Styles for Login and Register components */
+
+/* Color palette */
+:root {
+  --navy-blue: #05445e;
+  --blue-grotto: #189ab4;
+  --blue-green: #75e6da;
+  --baby-blue: #d4f1f4;
+  --white: #ffffff;
+  --error-red: #ff3b30;
+  --success-green: #189ab4;
+  --text-dark: #333333;
+  --shadow-color: rgba(5, 68, 94, 0.2);
+}
+
+/* Global styles */
+body {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  background-color: var(--baby-blue);
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+}
+
+/* Auth container - centers the card on the page */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Auth card - the main container for the form */
+.auth-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  transition: transform 0.3s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Make register card slightly larger */
+.register-card {
+  max-width: 520px;
+}
+
+/* Form title */
+.auth-card h2 {
+  color: var(--navy-blue);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+  position: relative;
+}
+
+.auth-card h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--blue-grotto);
+  border-radius: 3px;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+/* Form labels */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--navy-blue);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Form inputs */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: var(--white);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--blue-grotto);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(24, 154, 180, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa;
+}
+
+/* Input error styles */
+.form-group input.error,
+.form-group textarea.error {
+  border-color: var(--error-red);
+}
+
+.error-text {
+  color: var(--error-red);
+  font-size: 14px;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Button styles */
+.auth-button {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--blue-grotto);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.auth-button:hover {
+  background-color: var(--navy-blue);
+}
+
+.auth-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Footer with link */
+.auth-footer {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--text-dark);
+  font-size: 16px;
+}
+
+.auth-footer a {
+  color: var(--blue-grotto);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+  color: var(--navy-blue);
+  text-decoration: underline;
+}
+
+/* Success and error messages */
+.success-message,
+.error-message {
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.success-message {
+  background-color: rgba(52, 199, 89, 0.15);
+  color: var(--success-green);
+  border: 1px solid rgba(52, 199, 89, 0.3);
+}
+
+.error-message {
+  background-color: rgba(255, 59, 48, 0.15);
+  color: var(--error-red);
+  border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+  
+  .auth-card h2 {
+    font-size: 24px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+  }
+  
+  .auth-button {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 10px;
+  }
+  
+  .auth-card {
+    padding: 20px 16px;
+    border-radius: 8px;
+  }
+  
+  .auth-card h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 18px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+/* Animation for form elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
+
+.auth-button {
+  animation: fadeIn 0.4s ease forwards;
+  animation-delay: 0.6s;
+}
